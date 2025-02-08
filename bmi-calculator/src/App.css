@@ -1,0 +1,119 @@
+:root {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  --primary-color: #2196f3;
+  --secondary-color: #ff4081;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --border-radius: 12px;
+  --spacing: 2rem;
+  --transition: all 0.3s ease;
+}
+
+.Display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing);
+  gap: var(--spacing);
+  background: black;
+  border-radius: 3px;
+  color: white;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.Controller {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(180%);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  min-width: 4rem;
+  height: 4rem;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.Submit {
+  display: flex; 
+  width: 30%;
+  margin-top: 50px;
+  justify-content: center;
+}
+
+.Submit:hover {
+  transition: .5s;
+  color: white;
+  background-color: black;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button::before {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.1);
+}
+
+.Container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 80%;
+  max-width: 1200px;
+  padding: 2rem;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Additional decorative elements */
+.Display::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  :root {
+    --spacing: 1rem;
+  }
+
+  .Controller {
+    flex-wrap: wrap;
+  }
+
+  button {
+    min-width: 3.5rem;
+    height: 3.5rem;
+  }
+}
