@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+:root {
+  padding: 0;
+  margin: 0;
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Make a timer using react and use tailwindcss as a base for
+* custom classes (structures) */
+
